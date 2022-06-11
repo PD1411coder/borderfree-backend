@@ -3,6 +3,7 @@ package main
 import (
 	"borderfree/handler"
 	"borderfree/router"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -26,5 +27,5 @@ func main() {
 
 	router.SetupSecuredRoutes(app)
 
-	app.Listen(":3001")
+	app.Listen(":" + os.Getenv("PORT"))
 }
